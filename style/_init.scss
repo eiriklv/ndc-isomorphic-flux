@@ -1,0 +1,15 @@
+html {
+  height: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+  &::after, &::before {
+    box-sizing: border-box;
+  }
+}
+
+#app {
+  height: 100%;
+}

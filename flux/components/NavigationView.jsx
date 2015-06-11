@@ -1,5 +1,6 @@
 const React = require('react');
 const { Link } = require('react-router');
+const truncate = require('truncate');
 
 const NavigationView = React.createClass({
   propTypes: {
@@ -19,27 +20,31 @@ const NavigationView = React.createClass({
   },
 
   render() {
-    let links = this.props.data.videos.map((video) => {
+    let videoLinks = this.props.data.videos.map((video) => {
       return (
         <li key={'video-' + video.id}>
-          <Link to='video-details' params={{ id: video.id }}>
-            {video.name}
+          <Link className='button button-primary' style={{width: '250px', overflow: 'hidden'}} to='video-details' params={{ id: video.id }}>
+            {truncate(video.name, 25)}
           </Link>
         </li>
       );
     });
 
     return (
-      <ul className='master'>
-        {links}
-        <Link to='index'>
-          <small>(back to index)</small>
-        </Link>
-        <br />
-        <Link to='landing'>
-          <small>(landing)</small>
-        </Link>
-        <br />
+      <ul className='nav-list'>
+        <li key='index'>
+          <Link className='button' to='index'>
+            Index
+          </Link>
+        </li>
+
+        {videoLinks}
+
+        <li key='landing'>
+          <Link className='button' to='landing'>
+            Back to landing
+          </Link>
+        </li>
 
         <form
           method='POST'

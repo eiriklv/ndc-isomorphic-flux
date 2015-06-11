@@ -5,7 +5,7 @@ const Footer = React.createClass({
     return (
       <footer className='HolyGrail-footer'>
         <div className='Footer'>
-          <div style={{backgroundColor: 'black', height: 200}}></div>
+          <div style={{backgroundColor: 'white', height: 200}}></div>
         </div>
       </footer>
     );

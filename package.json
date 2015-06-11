@@ -37,6 +37,7 @@
     "react-router": "git://github.com/eiriklv/react-router.git#transitionContext",
     "react-tap-event-plugin": "^0.1.4",
     "superagent": "^0.21.0",
+    "truncate": "^1.0.4",
     "url-join": "0.0.1"
   },
   "devDependencies": {

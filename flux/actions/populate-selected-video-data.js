@@ -1,3 +1,5 @@
+const FORCE_UPDATE = true;
+
 module.exports = function(context, payload, done=(()=>{})) {
   context.Dispatcher.emit('SET_SELECTED_VIDEO_AS_LOADING');
 
@@ -11,7 +13,7 @@ module.exports = function(context, payload, done=(()=>{})) {
     return res;
   }, [])[0];
 
-  if (video) {
+  if (!FORCE_UPDATE && video) {
     context.Dispatcher.emit('POPULATE_SELECTED_VIDEO_DATA', video);
     return done();
   }

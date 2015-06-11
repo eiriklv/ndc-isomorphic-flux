@@ -1,5 +1,5 @@
-Fluxity Starter Kit
-===================
+NDC Isomorphic React and Flux Example
+=====================================
 
 #### Introduction:
 Isomorphic Flux and React starter kit with Passport authentication

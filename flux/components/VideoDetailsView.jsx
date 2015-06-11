@@ -1,5 +1,3 @@
-'use strict';
-
 const React = require('react');
 const DocumentTitle = require('react-document-title');
 
@@ -25,6 +23,7 @@ const VideoDetailsView = React.createClass({
         <div className='place-details-box'>
           <h2>{this.props.data.name}</h2>
           <img src={this.props.data.picture}/>
+          <p>{this.props.data.description}</p>
         </div>
       </DocumentTitle>
     );

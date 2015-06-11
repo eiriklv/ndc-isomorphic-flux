@@ -1,5 +1,3 @@
-'use strict';
-
 const React = require('react');
 
 const SignUpForm = React.createClass({
@@ -37,7 +35,10 @@ const SignUpForm = React.createClass({
 
   render() {
     return (
-      <form method='POST' action={this.props.data.apiUrl + '/signup?' + this.props.data.serverRedirect}>
+      <form
+        method='POST'
+        action={this.props.data.apiUrl + '/signup?' + this.props.data.serverRedirect}
+      >
         <div className='row'>
           <div className='six columns'>
             <label>{'Email: '}</label>

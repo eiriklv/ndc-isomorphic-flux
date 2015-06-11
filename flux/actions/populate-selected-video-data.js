@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = function(context, payload, done=(()=>{})) {
   context.Dispatcher.emit('SET_SELECTED_VIDEO_AS_LOADING');
 
@@ -8,7 +6,7 @@ module.exports = function(context, payload, done=(()=>{})) {
   // fetch directly from the database
   let videos = context.Stores.Videos.getState().data || [];
 
-  let video = videos.reduce(function(res, cur) {
+  let video = videos.reduce((res, cur) => {
     if (cur.id === payload.params.id) res.push(cur);
     return res;
   }, [])[0];
@@ -22,7 +20,7 @@ module.exports = function(context, payload, done=(()=>{})) {
     params: payload.params,
     query: payload.query,
     userId: context.User ? context.User.id : null
-  }, function(err, video) {
+  }, (err, video) => {
     if (err || !video) {
       context.Dispatcher.emit('SET_SELECTED_VIDEO_AS_NOT_FOUND');
       context.Dispatcher.emit('ADD_ALERT', err);

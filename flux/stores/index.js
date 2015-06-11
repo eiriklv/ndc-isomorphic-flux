@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   Videos: require('./videos'),
   VideoDetails: require('./video-details'),

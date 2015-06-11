@@ -1,5 +1,3 @@
-'use strict';
-
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
@@ -25,7 +23,7 @@ schema.methods.validPassword = function(password) {
 schema.statics.login = function(req, email, password, done) {
   this.findOne({
     'email': email
-  }, function(err, user) {
+  }, (err, user) => {
     if (err) return done(err);
 
     if (!user) {
@@ -50,9 +48,11 @@ schema.statics.signup = function(req, email, password, done) {
   let UserModel = this;
 
   this.findOne({
-    'email': email
-  }, function(err, user) {
-    if (err) return done(err);
+    email: email
+  }, (err, user) => {
+    if (err) {
+      return done(err);
+    }
 
     if (user) {
       return done(null, false, {
@@ -61,11 +61,14 @@ schema.statics.signup = function(req, email, password, done) {
     }
 
     let newUser = new UserModel();
+
     newUser.email = email;
     newUser.password = newUser.generateHash(password);
 
-    newUser.save(function(err, product) {
-      if (err) return done(err);
+    newUser.save((err, product) => {
+      if (err) {
+        return done(err);
+      }
 
       done(null, product, {
         message: 'Successfully signed up'

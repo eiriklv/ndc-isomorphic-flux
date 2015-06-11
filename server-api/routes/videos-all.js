@@ -1,6 +1,5 @@
-'use strict';
-
 const express = require('express');
+
 const handlers = require('../handlers/videos');
 
 const router = express();

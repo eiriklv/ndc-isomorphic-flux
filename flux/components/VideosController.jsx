@@ -1,5 +1,3 @@
-'use strict';
-
 const React = require('react');
 const DocumentTitle = require('react-document-title');
 const { RouteHandler } = require('react-router');
@@ -36,18 +34,17 @@ const VideosController = React.createClass({
           <Header
             title={this.props.State.App.title}
           />
-          <main className='HolyGrail-body'>
-            <article className='HolyGrail-content'>
+          <main className='row'>
+            <nav className='three columns'>
+              <NavigationController
+                State={this.props.State}
+              />
+            </nav>
+            <article className='nine columns'>
               <RouteHandler
                 State={this.props.State}
               />
             </article>
-            <NavigationController
-              State={this.props.State}
-            />
-            <aside className='HolyGrail-ads'>
-              Aside 2
-            </aside>
           </main>
           <Footer />
         </div>

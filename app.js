@@ -1,5 +1,3 @@
-'use strict';
-
 const debug = require('debug')('app:main');
 const config = require('./config/env');
 const appSetup = require('./config/app-init-setup');

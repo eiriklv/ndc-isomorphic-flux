@@ -1,10 +1,8 @@
-'use strict';
-
 const passport = require('passport');
 const async = require('async');
 
 module.exports = function(req, res, next) {
-  passport.authenticate('local-login', function(err, user, info) {
+  passport.authenticate('local-login', (err, user, info) => {
     if (err) return next(err);
 
     if (!user) {
@@ -14,7 +12,7 @@ module.exports = function(req, res, next) {
       });
     }
 
-    req.logIn(user, function(err) {
+    req.logIn(user, (err) => {
       if (err) {
         return next(err);
       }

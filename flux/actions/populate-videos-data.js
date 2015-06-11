@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = function(context, payload, done=(()=>{})) {
   context.Dispatcher.emit('SET_VIDEOS_AS_LOADING');
 
@@ -7,7 +5,7 @@ module.exports = function(context, payload, done=(()=>{})) {
     params: payload.params,
     query: payload.query,
     userId: context.User ? context.User.id : null
-  }, function(err, videos) {
+  }, (err, videos) => {
     if (err || !videos) {
       context.Dispatcher.emit('POPULATE_VIDEOS_DATA', []);
       context.Dispatcher.emit('ADD_ALERT', err);

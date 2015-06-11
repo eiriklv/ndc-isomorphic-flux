@@ -1,10 +1,10 @@
-'use strict';
-
 const React = require('react');
 const qs = require('qs');
+
+const NavigationView = require('./NavigationView.jsx');
+
 const apiUrl = process.env.API_URL;
 const successRedirect = 'http://localhost:3000/login';
-const NavigationView = require('./NavigationView.jsx');
 
 const NavigationController = React.createClass({
   contextTypes: {

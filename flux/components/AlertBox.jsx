@@ -1,5 +1,3 @@
-'use strict';
-
 const React = require('react');
 
 const AlertBox = React.createClass({
@@ -18,8 +16,9 @@ const AlertBox = React.createClass({
   },
 
   renderAlerts() {
-    if (!this.props.data.alerts.length)
+    if (!this.props.data.alerts.length) {
       return <p key={'dummy'}>{'Everything is OK!'}</p>
+    }
 
     return this.props.data.alerts.map(function(alert) {
       return (

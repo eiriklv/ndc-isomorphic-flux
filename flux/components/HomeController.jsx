@@ -1,5 +1,3 @@
-'use strict';
-
 const React = require('react');
 const Flux = require('fluxomorph');
 const { RouteHandler } = require('react-router');

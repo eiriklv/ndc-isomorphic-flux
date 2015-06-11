@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   getInitialState() {
     return {
@@ -19,11 +17,13 @@ module.exports = {
       });
     },
     REMOVE_VIDEO_FROM_LIST(context, id) {
-      let video = this.state.data.slice().filter(function(video) {
+      let video = this.state.data.slice().filter((video) => {
         return video.id === id;
       })[0];
 
-      if (!video) return;
+      if (!video) {
+        return; 
+      }
 
       let newState = this.state.data.slice();
       newState.splice(newState.indexOf(video), 1);

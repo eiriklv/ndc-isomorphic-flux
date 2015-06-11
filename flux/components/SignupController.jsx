@@ -1,11 +1,10 @@
-'use strict';
-
 const React = require('react');
 const qs = require('qs');
-const apiUrl = process.env.API_URL;
-const successRedirect = 'http://localhost:3000/places';
 
 const SignupView = require('./SignupView.jsx');
+
+const apiUrl = process.env.API_URL;
+const successRedirect = 'http://localhost:3000/videos';
 
 const SignUpController = React.createClass({
   contextTypes: {

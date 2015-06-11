@@ -1,5 +1,3 @@
-'use strict';
-
 const React = require('react');
 const Router = require('react-router');
 const DocumentTitle = require('react-document-title');
@@ -29,17 +27,19 @@ const VideoDetailsController = React.createClass({
   },
 
   render() {
-    if (this.props.State.VideoDetails.notFound)
+    if (this.props.State.VideoDetails.notFound) {
       return <NotFoundView/>;
+    }
     
-    if (this.props.State.VideoDetails.isLoading)
+    if (this.props.State.VideoDetails.isLoading) {
       return <LoadingView/>;
+    }
 
     return (
       <VideoDetailsView
         data={{
           name: this.props.State.VideoDetails.data.name,
-          descriptions: this.props.State.VideoDetails.data.description,
+          description: this.props.State.VideoDetails.data.description,
           id: this.props.State.VideoDetails.data.id,
           picture: this.props.State.VideoDetails.data.pictures.sizes[3].link
         }}

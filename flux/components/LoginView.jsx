@@ -1,5 +1,3 @@
-'use strict';
-
 const React = require('react');
 const DocumentTitle = require('react-document-title');
 const { Link } = require('react-router');

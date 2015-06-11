@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   PopulateVideosData: require('./populate-videos-data'),
   PopulateSelectedVideoData: require('./populate-selected-video-data'),

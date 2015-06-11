@@ -1,9 +1,8 @@
-'use strict';
-
 const React = require('react');
 const qs = require('qs');
+
 const apiUrl = process.env.API_URL;
-const successRedirect = 'http://localhost:3000/places';
+const successRedirect = 'http://localhost:3000/videos';
 
 const LoginView = require('./LoginView.jsx');
 

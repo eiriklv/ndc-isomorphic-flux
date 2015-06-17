@@ -8,13 +8,13 @@ const LandingView = React.createClass({
       <DocumentTitle title={'Landing'}>
         <div className='section'>
           <div className='container'>
-            <h3 className='section-heading'>{'Landing page'}</h3>
-            <p className='section-description'>{'Wanna see the real stuff?'}</p>
+            <h3 className='section-heading'>{'NDC Video Web-app'}</h3>
+            <p className='section-description'>{'Wanna see all the videos?'}</p>
             <Link
               className='button button-primary'
               to='videos'
             >
-              {'Enter to see all the videos!'}
+              {'Enter here!'}
             </Link>
           </div>
         </div>
